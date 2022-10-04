@@ -11,19 +11,6 @@ Use console.log() to write the proper output to the command line.
 
 const fizzbuzz = () => {
   // Add your code here
-  const nums = Array.from(Array(100).keys());
-  nums.forEach((num) => {
-    const count = num + 1;
-    if ((count % 3 === 0) & (count % 5 === 0)) {
-      console.log("fizzbuzz");
-    } else if (count % 3 === 0) {
-      console.log("fizz");
-    } else if (count % 5 === 0) {
-      console.log("buzz");
-    } else {
-      console.log(count);
-    }
-  });
 };
 
 fizzbuzz();
