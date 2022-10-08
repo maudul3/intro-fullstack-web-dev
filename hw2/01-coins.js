@@ -1,7 +1,7 @@
 /** Exercise 01 - Coins **/
 
 const numberCoins = (coin_value, remaining) => {
-  // Determines number of a specified that can be used for the input
+  // Determines number of a specified coin that can be used for remaining balance
 
   // Map coin value to English words
   const coin_map = {
@@ -33,7 +33,6 @@ const numberCoins = (coin_value, remaining) => {
 
   // Modify str with comma if needed
   if ((remaining.val >= 0.01) & (coins > 0)) {
-    console.log(remaining.val);
     str = `${str}, `;
   }
 
@@ -43,10 +42,10 @@ const numberCoins = (coin_value, remaining) => {
 const calculateChange = (input) => {
   // Check that input is valid
   if (input > 10) {
-    return "Error: the number is too large";
+    return `${input} ==> Error: the number is too large`;
   }
 
-  // Determine string for each
+  // Determine amount of coin for each coin type and produce as string
   remaining = { val: input };
   let dollars_str, quarters_str, dimes_str, nickels_str, pennies_str;
 
@@ -56,7 +55,7 @@ const calculateChange = (input) => {
   nickels_str = numberCoins(0.05, remaining);
   pennies_str = numberCoins(0.01, remaining);
 
-  return `${dollars_str}${quarters_str}${dimes_str}${nickels_str}${pennies_str}`;
+  return `${input} ==> ${dollars_str}${quarters_str}${dimes_str}${nickels_str}${pennies_str}`;
 };
 
 // Sample Test Cases
