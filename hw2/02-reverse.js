@@ -24,7 +24,6 @@ button.onclick = () => {
   let output = document.getElementById("output");
 
   if (num.toString().length !== 8) {
-    console.log(num);
     output.style.color = "red";
     output.innerText = "Error: Please input an 8-digit number";
   } else {
