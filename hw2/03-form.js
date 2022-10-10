@@ -11,20 +11,19 @@ function handleSubmit(event) {
 
   // Empty form check
   if (!(form.elements.name.value.length && form.elements.email.value.length)) {
-    let error = document.getElementById("error")
+    let error = document.getElementById("error");
     error.style.color = "red";
-    if (!(form.elements.name.value.length || form.elements.email.value.length)) {
+    if (
+      !(form.elements.name.value.length || form.elements.email.value.length)
+    ) {
       error.innerText = "Error: name and email are required fields.";
-    }
-    else if (!(form.elements.name.value.length)) {
-      error.innerText = "Error: name is a required field."; 
-    }
-    else {
+    } else if (!form.elements.name.value.length) {
+      error.innerText = "Error: name is a required field.";
+    } else {
       error.innerText = "Error: email is a required field.";
     }
-    return
-  }
-  else {
+    return;
+  } else {
     error.innerText = "";
   }
 
