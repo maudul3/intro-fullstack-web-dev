@@ -23,6 +23,7 @@ const server = http.createServer((req, res) => {
     return result;
   };
 
+  // Function to create a table from query parameters
   let createTable = (res, url) => {
     res.write(`<table border="1">`);
     url.searchParams.forEach((value, key) => {
@@ -34,12 +35,13 @@ const server = http.createServer((req, res) => {
     res.write("</table>");
   };
 
+  // Route options
   if (req.url === "/") {
     let routeResults = getRoutes();
-
     res.writeHead(200, { "Content-Type": "text/html" });
     res.write(`<h1>Exercise 02</h1>`);
     res.write(`<ul> ${routeResults} </ul>`);
+    res.end();
   } else if (url.pathname === "/attributes") {
     res.writeHead(200, { "Content-Type": "text/html" });
     res.write("<h1>Attributes</h1>");
@@ -60,10 +62,6 @@ const server = http.createServer((req, res) => {
     res.write("There's nothing here :(");
     res.end();
   }
-
-  // Add your code here
-
-  res.end();
 });
 
 server.listen(port, () => {
